@@ -2,37 +2,76 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
+import styled from 'styled-components';
 
 import './index.css'
 
-const Header = () => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          Gatsby
-        </Link>
-      </h1>
-    </div>
-  </div>
-)
+const SideBar = styled.div`
+  padding: 2.5em 2.5em 0.5em 2.5em;
+  background: #312450;
+  cursor: default;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  text-align: right;
+  width: 18em;
+  z-index: 100;
+`
+
+const Inner = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: opacity 1s ease;
+  min-height: 100%;
+  width: 100%;
+  opacity: 1;
+`
+
+const Nav = styled.nav`
+  display: block;
+`
+
+const NavUl = styled.ul`
+  list-style-type: none;
+`;
+
+const NavItem = styled.li`
+  transition: opacity 0.15s ease, transform: 0.75s ease;
+  opacity: 1;
+  padding: 0;
+  position: relative;
+`
+
+const StyledLink = styled(Link)`
+  display: block;
+  color: #fff;
+  font-size: 0.65em;
+  font-weight: bold;
+  letter-spacing: 0.25em;
+  line-height: 1.75;
+  outline: 0;
+  text-decoration: none;
+  padding: 1em 0;
+  position: relative;
+  text-transform: uppercase;
+  &::after {
+    content: '';
+    background: linear-gradient(to right, #5e42a6, #b74e91);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 0.1em;
+    width: 100%;
+    border-radius: 0.2em;
+  }
+`
+
+const Wrapper = styled.div`
+  #sidebar + & {
+    margin-left: 18em;
+  }
+`
 
 const TemplateWrapper = ({ children }) => (
   <div>
@@ -43,17 +82,21 @@ const TemplateWrapper = ({ children }) => (
         { name: 'keywords', content: 'portfolio, web-dev, react, gatsby' },
       ]}
     />
-    <Header />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
+    <SideBar id="sidebar">
+      <Inner>
+        <Nav>
+          <NavUl>
+            <NavItem><StyledLink>About</StyledLink></NavItem>
+            <NavItem><StyledLink>Skills</StyledLink></NavItem>
+            <NavItem><StyledLink>Projects</StyledLink></NavItem>
+            <NavItem><StyledLink>Contact Me</StyledLink></NavItem>
+          </NavUl>
+        </Nav>
+      </Inner>
+    </SideBar>
+    <Wrapper>
       {children()}
-    </div>
+    </Wrapper>
   </div>
 )
 

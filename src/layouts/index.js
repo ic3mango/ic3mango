@@ -5,6 +5,7 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components';
 
 import './index.css'
+import Particles from '../components/Particles';
 
 const SideBar = styled.div`
   padding: 2.5em 2.5em 0.5em 2.5em;
@@ -41,29 +42,39 @@ const NavItem = styled.li`
   opacity: 1;
   padding: 0;
   position: relative;
-`
-
-const StyledLink = styled(Link)`
-  display: block;
-  color: #fff;
-  font-size: 0.65em;
-  font-weight: bold;
-  letter-spacing: 0.25em;
-  line-height: 1.75;
-  outline: 0;
-  text-decoration: none;
-  padding: 1em 0;
-  position: relative;
-  text-transform: uppercase;
-  &::after {
-    content: '';
-    background: linear-gradient(to right, #5e42a6, #b74e91);
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    height: 0.1em;
-    width: 100%;
-    border-radius: 0.2em;
+  a {
+    display: block;
+    color: ${props => props.isActive ? '#ffffff' : 'rgba(255, 255, 255, 0.35)'};
+    font-size: 0.65em;
+    font-weight: bold;
+    letter-spacing: 0.25em;
+    line-height: 1.75;
+    outline: 0;
+    text-decoration: none;
+    padding: 1em 0;
+    position: relative;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+    &:hover {
+      color: rgba(255, 255, 255, 0.55);
+    }
+    &::after, &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 0.2em;
+      border-radius: 0.2em;
+      width: 100%;
+    }
+    &::before {
+      background: #3c2c62;
+    }
+    &::after {
+      background-image: linear-gradient(to right, #5e42a6, #b74e91);
+      max-width: ${props => props.isActive ? '100%' : '0'};
+      transition: max-width 0.2s ease;
+    }
   }
 `
 
@@ -73,7 +84,16 @@ const Wrapper = styled.div`
   }
 `
 
-const TemplateWrapper = ({ children }) => (
+const FullScreen = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+`
+
+const pageList = ['about', 'skills', 'projects', 'contact']
+
+const TemplateWrapper = ({ children, location: { pathname }}) => (
   <div>
     <Helmet
       title="Stefan Portfolio"
@@ -86,19 +106,23 @@ const TemplateWrapper = ({ children }) => (
       <Inner>
         <Nav>
           <NavUl>
-            <NavItem><StyledLink>About</StyledLink></NavItem>
-            <NavItem><StyledLink>Skills</StyledLink></NavItem>
-            <NavItem><StyledLink>Projects</StyledLink></NavItem>
-            <NavItem><StyledLink>Contact Me</StyledLink></NavItem>
+            {pageList.map((name, i) =>
+              <NavItem key={i} isActive={pathname === `/${name}`}><Link to={`/${name}`}>{name}</Link></NavItem>
+            )}
           </NavUl>
         </Nav>
       </Inner>
     </SideBar>
     <Wrapper>
-      {children()}
+      <FullScreen>
+        <Inner>
+          {children()}
+        </Inner>
+        <Particles />
+      </FullScreen>
     </Wrapper>
   </div>
-)
+);
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func,

@@ -2,13 +2,10 @@ import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components';
 import ButtonDefault from '../components/ButtonDefault';
+import PageViewTransparent from '../components/PageViewTransparent';
 
-const PageView = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100vh;
-  background-color: rgba(41, 175, 84, 0.2);
+const PageView = PageViewTransparent.extend`
+  background-color: rgba(239, 218, 91, 0.25);
 `
 
 const Inner = styled.div`

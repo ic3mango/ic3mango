@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components';
 import ButtonDefault from '../components/ButtonDefault';
+import PageViewTransparent from '../components/PageViewTransparent';
 
 import javascriptSvg from '../images/icons/javascript.svg';
 import reactSvg from '../images/icons/react.svg';
@@ -11,11 +12,7 @@ import mongodbSvg from '../images/icons/mongodb.svg';
 import gitSvg from '../images/icons/git.svg';
 
 
-const PageView = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100vh;
+const PageView = PageViewTransparent.extend`
   background-color: rgba(0, 196, 220, 0.2);
 `
 const Grid = styled.div`

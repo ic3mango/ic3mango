@@ -1,14 +1,13 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components';
+import { SocialIcon } from 'react-social-icons';
 import ButtonDefault from '../components/ButtonDefault';
+import PageViewTransparent from '../components/PageViewTransparent';
 
-const PageView = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100vh;
-  background-color: rgba(247, 217, 99, 0.2);
+
+const PageView = PageViewTransparent.extend`
+  background-color: rgba(120, 206, 220, 0.2);
 `
 
 const Inner = styled.div`
@@ -69,6 +68,9 @@ const ContactFormTextArea = ContactFormInputText.withComponent('textarea').exten
   padding: 0.75em 1em;
 `
 
+const ButtonSubmit = ButtonDefault.withComponent('input').extend`
+`;
+
 const ContactInfo = styled.div`
   flex-basis: 33%;
   padding-left: 2em;
@@ -79,19 +81,54 @@ const ContactInfoList = styled.ul`
   padding: 0;
 `
 
+const SocialIconsList = styled.ul`
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  & li {
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px;
+    height: 50px;
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform: scale(0);
+      opacity: 0.3;
+      background-color: #fff;
+      border-radius: 50%;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    &:hover::after {
+      opacity: 0.15;
+      transform: scale(1);
+    }
+  }
+`
+
+
 const ContactPage = ({ transition }) => (
   <div style={transition && transition.style}>
     <PageView>
       <Inner>
         <h2>Get in touch</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores in officiis, sequi dolores, hic dolor veritatis molestiae aut animi beatae iusto minus asperiores totam? Iste ut voluptatibus, eum provident reprehenderit!</p>
         <Split>
-          <ContactForm>
+          <ContactForm action="mailto:stefantrysil@gmail.com" method="GET">
 
             <ContactFormInline>
               <ContactFormGroupInlineHalf>
-                <label htmlFor="name">Name</label>
-                <ContactFormInputText type="text" name="name" id="name"/>
+                <label htmlFor="subject">Name</label>
+                <ContactFormInputText type="text" name="subject" id="subject"/>
               </ContactFormGroupInlineHalf>
               <ContactFormGroupInlineHalf>
                 <label htmlFor="email">Email</label>
@@ -100,26 +137,34 @@ const ContactPage = ({ transition }) => (
             </ContactFormInline>
 
             <ContactFormInputGroup>
-              <label htmlFor="message">Message</label>
-              <ContactFormTextArea name="message" id="message" rows="5"></ContactFormTextArea>
+              <label htmlFor="body">Message</label>
+              <ContactFormTextArea name="body" id="body"></ContactFormTextArea>
             </ContactFormInputGroup>
 
-            <ButtonDefault>Send message</ButtonDefault>
+            <ButtonSubmit type="submit" value="send" />
           </ContactForm>
 
           <ContactInfo>
             <ContactInfoList>
               <li>
-                <h3>Address</h3>
+                <h3>Name</h3>
+                <p>Stefan Jiang</p>
               </li>
               <li>
                 <h3>Email</h3>
+                <p>stefantrysil@gmail.com</p>
               </li>
               <li>
                 <h3>Phone</h3>
+                <p>+31 64 385 4389</p>
               </li>
               <li>
                 <h3>Social</h3>
+                <SocialIconsList>
+                  <li><SocialIcon url="https://twitter.com/ic3mango" color="rgba(255, 255, 255, 0.5)"/></li>
+                  <li><SocialIcon url="https://github.com/ic3mango" color="rgba(255, 255, 255, 0.5)"/></li>
+                  <li><SocialIcon url="https://plus.google.com/u/0/117823491645128372085" color="rgba(255, 255, 255, 0.5)"/></li>
+                </SocialIconsList>
               </li>
             </ContactInfoList>
           </ContactInfo>

@@ -12,6 +12,7 @@
     "gatsby-plugin-typography": "^1.7.10",
     "gatsby-source-filesystem": "^1.5.11",
     "react-particles-js": "^2.1.0",
+    "react-social-icons": "^2.7.0",
     "react-transition-group": "^2.2.1",
     "styled-components": "^2.4.0",
     "typography-theme-kirkham": "^0.16.3"

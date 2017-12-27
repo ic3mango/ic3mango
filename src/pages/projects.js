@@ -2,13 +2,13 @@ import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 import ButtonDefault from '../components/ButtonDefault';
+import PageViewTransparent from '../components/PageViewTransparent';
 
 import fatevoke from '../images/projects/fatevoke.png';
 import barcation from '../images/projects/barcation.png';
 import pinflight from '../images/projects/pinflight.png';
 
-const Section = styled.section`
-  display: block;
+const PageView = PageViewTransparent.extend`
   background-color: rgba(183, 78, 145, 0.2);
 `
 
@@ -35,8 +35,7 @@ const ProjectImage = styled.a`
   background-size: cover;
   border-radius: 0;
   text-decoration: none;
-  width: 28em;
-  flex-shrink: 0;
+  min-width: 28em;
   cursor: pointer;
 `
 
@@ -45,7 +44,7 @@ const ProjectDescription = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 50em;
+  flex: 1 1 auto;
 `
 const ProjectDescriptionInner = styled.div`
 `
@@ -57,7 +56,7 @@ const ProjectDescriptionActions = styled.div`
 
 const ProjectsPage = ({ transition }) => {
   return <div style={transition && transition.style}>
-    <Section>
+    <PageView>
       {/* Project 1 */}
       <ProjectHighlight>
         <ProjectImage style={{ backgroundImage: `url(${fatevoke})`}}/>
@@ -100,7 +99,7 @@ const ProjectsPage = ({ transition }) => {
           </ProjectDescriptionInner>
         </ProjectDescription>
       </ProjectHighlightThird>
-    </Section>
+    </PageView>
   </div>
 }
 

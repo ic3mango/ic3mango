@@ -107,6 +107,7 @@ const SocialIconsList = styled.ul`
       background-color: #fff;
       border-radius: 50%;
       transition: opacity 0.2s ease, transform 0.2s ease;
+      z-index: -2;
     }
 
     &:hover::after {
@@ -116,6 +117,7 @@ const SocialIconsList = styled.ul`
   }
 `
 
+var socialUrls = ["https://twitter.com/ic3mango", "https://github.com/ic3mango", "https://plus.google.com/u/0/117823491645128372085"];
 
 const ContactPage = ({ transition }) => (
   <div style={transition && transition.style}>
@@ -161,9 +163,11 @@ const ContactPage = ({ transition }) => (
               <li>
                 <h3>Social</h3>
                 <SocialIconsList>
-                  <li><SocialIcon url="https://twitter.com/ic3mango" color="rgba(255, 255, 255, 0.5)"/></li>
-                  <li><SocialIcon url="https://github.com/ic3mango" color="rgba(255, 255, 255, 0.5)"/></li>
-                  <li><SocialIcon url="https://plus.google.com/u/0/117823491645128372085" color="rgba(255, 255, 255, 0.5)"/></li>
+                  {socialUrls.map((url, i) =>
+                    <li key={i}>
+                      <SocialIcon url={url} color="rgba(255, 255, 255, 0.5)"></SocialIcon>
+                    </li>
+                  )}
                 </SocialIconsList>
               </li>
             </ContactInfoList>

@@ -5,7 +5,7 @@ import ButtonDefault from '../components/ButtonDefault';
 import PageViewTransparent from '../components/PageViewTransparent';
 
 const PageView = PageViewTransparent.extend`
-  background-color: rgba(239, 218, 91, 0.25);
+  background-color: rgba(0, 196, 220, 0.2);
 `
 
 const Inner = styled.div`
@@ -18,9 +18,7 @@ const IndexPage = ({ transition }) => (
       <Inner >
         <p>
           Hi. I'm Stefan. A cosmopolitan, explorer, humanitarian, environmentalist, reader, cyclist,
-          cynic, iconoclast, crypto investor, and web-developer. An aeronautical engineer by day and programmer by
-          night, I wish to one day be able to program a drone to buy takeout food for me so that there will be
-          time for coding 😜.
+          cynic, iconoclast, crypto investor, and web-developer.
         </p>
       </Inner>
     </PageView>

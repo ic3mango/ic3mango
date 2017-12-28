@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 import ButtonDefault from '../components/ButtonDefault';
+import ButtonAlternate from '../components/ButtonAlternate';
 import PageViewTransparent from '../components/PageViewTransparent';
 
 import fatevoke from '../images/projects/fatevoke.png';
@@ -66,7 +67,7 @@ const ProjectsPage = ({ transition }) => {
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam quisquam quae ratione est debitis. Harum quibusdam velit laboriosam obcaecati perspiciatis magnam dolores, reprehenderit ea soluta totam, eum a odit qui.</p>
             <ProjectDescriptionActions>
               <ButtonDefault to="/">Website</ButtonDefault>
-              <ButtonDefault to="/">Github</ButtonDefault>
+              <ButtonAlternate to="/">Github</ButtonAlternate>
             </ProjectDescriptionActions>
           </ProjectDescriptionInner>
         </ProjectDescription>
@@ -80,7 +81,7 @@ const ProjectsPage = ({ transition }) => {
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam quisquam quae ratione est debitis. Harum quibusdam velit laboriosam obcaecati perspiciatis magnam dolores, reprehenderit ea soluta totam, eum a odit qui.</p>
             <ProjectDescriptionActions>
               <ButtonDefault to="/">Website</ButtonDefault>
-              <ButtonDefault to="/">Github</ButtonDefault>
+              <ButtonAlternate to="/">Github</ButtonAlternate>
             </ProjectDescriptionActions>
           </ProjectDescriptionInner>
         </ProjectDescription>
@@ -94,7 +95,7 @@ const ProjectsPage = ({ transition }) => {
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam quisquam quae ratione est debitis. Harum quibusdam velit laboriosam obcaecati perspiciatis magnam dolores, reprehenderit ea soluta totam, eum a odit qui.</p>
             <ProjectDescriptionActions>
               <ButtonDefault to="/">Website</ButtonDefault>
-              <ButtonDefault to="/">Github</ButtonDefault>
+              <ButtonAlternate to="/">Github</ButtonAlternate>
             </ProjectDescriptionActions>
           </ProjectDescriptionInner>
         </ProjectDescription>

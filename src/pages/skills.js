@@ -13,7 +13,7 @@ import gitSvg from '../images/icons/git.svg';
 
 
 const PageView = PageViewTransparent.extend`
-  background-color: rgba(0, 196, 220, 0.2);
+  background-color: rgba(239, 218, 91, 0.25);
 `
 const Grid = styled.div`
   display: grid;

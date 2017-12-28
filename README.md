@@ -1,13 +1,17 @@
-# gatsby-starter-default
-The default Gatsby starter
+# Ic3mango's portfolio
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/)
+Vist the [website](https://nervous-bartik-c43014.netlify.com/)
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-```
-gatsby new gatsby-example-site
-```
+## Built using
 
-## Deploy
+React + GatsbyJS
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+styled with styled-components
+
+## Background particles effect
+checkout [particles.js](http://vincentgarreau.com/particles.js/)
+
+
+## Deployed using netlify
+![](https://www.netlify.com/img/deploy/button.svg)
+<!--  -->

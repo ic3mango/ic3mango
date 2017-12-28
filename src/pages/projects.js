@@ -1,16 +1,15 @@
 import React from 'react';
 import Link from 'gatsby-link';
-// import Img from 'gatsby-image';
 import styled from 'styled-components';
 import ButtonDefault from '../components/ButtonDefault';
+import PageViewTransparent from '../components/PageViewTransparent';
 
-import projectImage1 from '../images/mockup.png';
+import fatevoke from '../images/projects/fatevoke.png';
+import barcation from '../images/projects/barcation.png';
+import pinflight from '../images/projects/pinflight.png';
 
-console.log(projectImage1);
-
-const Section = styled.section`
-  display: block;
-  background-color: #5052b5;
+const PageView = PageViewTransparent.extend`
+  background-color: rgba(183, 78, 145, 0.2);
 `
 
 const ProjectHighlight = styled.div`
@@ -18,13 +17,25 @@ const ProjectHighlight = styled.div`
   flex-direction: row;
   min-height: 22.5em;
 `
+
+const ProjectHighlightSecond = ProjectHighlight.extend`
+  background-color: rgba(0, 0, 0, 0.05);
+`
+
+const ProjectHighlightThird = ProjectHighlight.extend`
+  background-color: rgba(0, 0, 0, 0.1);
+`
+
+
 const ProjectImage = styled.a`
-  display: block;
+  display: inline-block;
   position: relative;
-  width: 25em;
-  background-image: url(projectImage1) no-repeat;
   background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 0;
+  text-decoration: none;
+  min-width: 28em;
   cursor: pointer;
 `
 
@@ -33,31 +44,63 @@ const ProjectDescription = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 50em;
+  flex: 1 1 auto;
+`
+const ProjectDescriptionInner = styled.div`
 `
 
-const ProjectsPage = ({ transition, data }) => (
-  <div style={transition && transition.style}>
-    <Section>
+const ProjectDescriptionActions = styled.div`
+  display: flex;
+  justify-content: space-around;
+`
+
+const ProjectsPage = ({ transition }) => {
+  return <div style={transition && transition.style}>
+    <PageView>
+      {/* Project 1 */}
       <ProjectHighlight>
-        <ProjectDescription>why do i do this</ProjectDescription>
+        <ProjectImage style={{ backgroundImage: `url(${fatevoke})`}}/>
+        <ProjectDescription>
+          <ProjectDescriptionInner>
+            <h2>FateVoke</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam quisquam quae ratione est debitis. Harum quibusdam velit laboriosam obcaecati perspiciatis magnam dolores, reprehenderit ea soluta totam, eum a odit qui.</p>
+            <ProjectDescriptionActions>
+              <ButtonDefault to="/">Website</ButtonDefault>
+              <ButtonDefault to="/">Github</ButtonDefault>
+            </ProjectDescriptionActions>
+          </ProjectDescriptionInner>
+        </ProjectDescription>
       </ProjectHighlight>
-    </Section>
+      {/* Project 2 */}
+      <ProjectHighlightSecond>
+        <ProjectImage style={{ backgroundImage: `url(${barcation})`}}/>
+        <ProjectDescription>
+          <ProjectDescriptionInner>
+            <h2>Barcation</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam quisquam quae ratione est debitis. Harum quibusdam velit laboriosam obcaecati perspiciatis magnam dolores, reprehenderit ea soluta totam, eum a odit qui.</p>
+            <ProjectDescriptionActions>
+              <ButtonDefault to="/">Website</ButtonDefault>
+              <ButtonDefault to="/">Github</ButtonDefault>
+            </ProjectDescriptionActions>
+          </ProjectDescriptionInner>
+        </ProjectDescription>
+      </ProjectHighlightSecond>
+      {/* Project 3 */}
+      <ProjectHighlightThird>
+        <ProjectImage style={{ backgroundImage: `url(${pinflight})`}}/>
+        <ProjectDescription>
+          <ProjectDescriptionInner>
+            <h2>PinFlight</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam quisquam quae ratione est debitis. Harum quibusdam velit laboriosam obcaecati perspiciatis magnam dolores, reprehenderit ea soluta totam, eum a odit qui.</p>
+            <ProjectDescriptionActions>
+              <ButtonDefault to="/">Website</ButtonDefault>
+              <ButtonDefault to="/">Github</ButtonDefault>
+            </ProjectDescriptionActions>
+          </ProjectDescriptionInner>
+        </ProjectDescription>
+      </ProjectHighlightThird>
+    </PageView>
   </div>
-)
+}
 
 export default ProjectsPage;
-
-export const query = graphql`
-  query GatsbyImageSampleQuery {
-    file(relativePath: { eq: "images/mockup.png" }) {
-      childImageSharp {
-        # Specify the image processing steps right in the query
-        # Makes it trivial to update as your page's design changes.
-        resolutions(width: 125, height: 125) {
-          ...GatsbyImageSharpResolutions
-        }
-      }
-    }
-  }
-`

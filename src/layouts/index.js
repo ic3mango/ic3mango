@@ -23,10 +23,8 @@ const Inner = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: opacity 1s ease;
   min-height: 100%;
   width: 100%;
-  opacity: 1;
 `
 
 const Nav = styled.nav`
@@ -96,7 +94,7 @@ const pageList = ['about', 'skills', 'projects', 'contact']
 const TemplateWrapper = ({ children, location: { pathname }}) => (
   <div>
     <Helmet
-      title="Stefan Portfolio"
+      title="Stefan's Portfolio"
       meta={[
         { name: 'description', content: 'Stefan\'s portfolio site built using React' },
         { name: 'keywords', content: 'portfolio, web-dev, react, gatsby' },

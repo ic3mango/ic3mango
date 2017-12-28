@@ -5,7 +5,7 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components';
 
 import './index.css'
-import favIcon from '../images/icons/main.png';
+import favIcon from '../images/icons/federalist.png';
 import Particles from '../components/Particles';
 
 const SideBar = styled.div`

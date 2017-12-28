@@ -27,6 +27,9 @@ const ProjectHighlightThird = ProjectHighlight.extend`
   background-color: rgba(0, 0, 0, 0.1);
 `
 
+const ButtonDefaultExternal = ButtonDefault.withComponent('a');
+const ButtonAlternateExternal = ButtonAlternate.withComponent('a');
+
 
 const ProjectImage = styled.a`
   display: inline-block;
@@ -64,10 +67,12 @@ const ProjectsPage = ({ transition }) => {
         <ProjectDescription>
           <ProjectDescriptionInner>
             <h2>FateVoke</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam quisquam quae ratione est debitis. Harum quibusdam velit laboriosam obcaecati perspiciatis magnam dolores, reprehenderit ea soluta totam, eum a odit qui.</p>
+            <p>Create polls and share them with your friends or anyone in the world. Anyone can vote and you'll be able to
+              see the results of the poll visualized in a PieChart.
+            </p>
             <ProjectDescriptionActions>
-              <ButtonDefault to="/">Website</ButtonDefault>
-              <ButtonAlternate to="/">Github</ButtonAlternate>
+              <ButtonDefaultExternal href="https://fatevoke.herokuapp.com/" target="_blank">Website</ButtonDefaultExternal>
+              <ButtonAlternateExternal href="https://github.com/ic3mango/FateVoke" target="_blank">Github</ButtonAlternateExternal>
             </ProjectDescriptionActions>
           </ProjectDescriptionInner>
         </ProjectDescription>
@@ -78,10 +83,12 @@ const ProjectsPage = ({ transition }) => {
         <ProjectDescription>
           <ProjectDescriptionInner>
             <h2>Barcation</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam quisquam quae ratione est debitis. Harum quibusdam velit laboriosam obcaecati perspiciatis magnam dolores, reprehenderit ea soluta totam, eum a odit qui.</p>
+            <p>Sign in with twitter and indicate your interest in visiting a bar. Other users will be able to connect with you
+              via twitter before meeting up at the bar.
+            </p>
             <ProjectDescriptionActions>
-              <ButtonDefault to="/">Website</ButtonDefault>
-              <ButtonAlternate to="/">Github</ButtonAlternate>
+              <ButtonDefaultExternal href="https://barcation.herokuapp.com/" target="_blank">Website</ButtonDefaultExternal>
+              <ButtonAlternateExternal href="https://github.com/ic3mango/Barcation-heroku" target="_blank">Github</ButtonAlternateExternal>
             </ProjectDescriptionActions>
           </ProjectDescriptionInner>
         </ProjectDescription>
@@ -92,10 +99,11 @@ const ProjectsPage = ({ transition }) => {
         <ProjectDescription>
           <ProjectDescriptionInner>
             <h2>PinFlight</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam quisquam quae ratione est debitis. Harum quibusdam velit laboriosam obcaecati perspiciatis magnam dolores, reprehenderit ea soluta totam, eum a odit qui.</p>
+            <p>Pinterest clone which allows aeronautics hobbyists to share pins of their favorite aeronautics photo. Users are able to save and hide pins and organize them according to categories.
+            </p>
             <ProjectDescriptionActions>
-              <ButtonDefault to="/">Website</ButtonDefault>
-              <ButtonAlternate to="/">Github</ButtonAlternate>
+              <ButtonDefaultExternal href="https://pinflight.herokuapp.com/" target="_blank">Website</ButtonDefaultExternal>
+              <ButtonAlternateExternal href="https://github.com/ic3mango/pinflight" target="_blank">Github</ButtonAlternateExternal>
             </ProjectDescriptionActions>
           </ProjectDescriptionInner>
         </ProjectDescription>

@@ -66,6 +66,7 @@ const ContactFormInputText = styled.input`
 const ContactFormTextArea = ContactFormInputText.withComponent('textarea').extend`
   height: 16em;
   padding: 0.75em 1em;
+  resize: none;
 `
 
 const ButtonSubmit = ButtonDefault.withComponent('input').extend`

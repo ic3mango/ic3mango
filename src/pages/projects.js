@@ -5,18 +5,25 @@ import ButtonDefault from '../components/ButtonDefault';
 import ButtonAlternate from '../components/ButtonAlternate';
 import PageViewTransparent from '../components/PageViewTransparent';
 
+import { media } from '../utils/styled';
 import fatevoke from '../images/projects/fatevoke.png';
 import barcation from '../images/projects/barcation.png';
 import pinflight from '../images/projects/pinflight.png';
 
 const PageView = PageViewTransparent.extend`
   background-color: rgba(183, 78, 145, 0.2);
+  ${media.mobile`
+    padding-top: 3.5em;
+  `}
 `
 
 const ProjectHighlight = styled.div`
   display: flex;
   flex-direction: row;
   min-height: 22.5em;
+  ${media.small`
+    flex-direction: column;
+  `}
 `
 
 const ProjectHighlightSecond = ProjectHighlight.extend`
@@ -41,6 +48,10 @@ const ProjectImage = styled.a`
   text-decoration: none;
   min-width: 28em;
   cursor: pointer;
+  ${media.small`
+    display: block;
+    min-height: 28em;
+  `}
 `
 
 const ProjectDescription = styled.div`
@@ -49,6 +60,7 @@ const ProjectDescription = styled.div`
   flex-direction: column;
   justify-content: center;
   flex: 1 1 auto;
+
 `
 const ProjectDescriptionInner = styled.div`
 `

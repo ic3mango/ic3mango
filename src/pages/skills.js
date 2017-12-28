@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import ButtonDefault from '../components/ButtonDefault';
 import PageViewTransparent from '../components/PageViewTransparent';
 
+import { media } from '../utils/styled';
 import javascriptSvg from '../images/icons/javascript.svg';
 import reactSvg from '../images/icons/react.svg';
 import reduxSvg from '../images/icons/redux.svg';
@@ -20,6 +21,9 @@ const Grid = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 30px;
   color: #888;
+  ${media.small`
+    grid-template-columns: 1fr 1fr;
+  `}
 `
 
 const Img = styled.img`

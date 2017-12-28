@@ -142,7 +142,7 @@ const pageList = ['about', 'skills', 'projects', 'contact']
 const TemplateWrapper = ({ children, location: { pathname }}) => (
   <div>
     <Helmet
-      title="Stefan's Portfolio"
+      title="Stefan"
       meta={[
         { name: 'description', content: 'Stefan\'s portfolio site built using React' },
         { name: 'keywords', content: 'portfolio, web-dev, react, gatsby' },

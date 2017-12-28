@@ -5,6 +5,7 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components';
 
 import './index.css'
+import favIcon from '../images/icons/main.png';
 import Particles from '../components/Particles';
 
 const SideBar = styled.div`
@@ -98,6 +99,9 @@ const TemplateWrapper = ({ children, location: { pathname }}) => (
       meta={[
         { name: 'description', content: 'Stefan\'s portfolio site built using React' },
         { name: 'keywords', content: 'portfolio, web-dev, react, gatsby' },
+      ]}
+      link={[
+        { rel: "shotcut icon", type:"image/png", href: `${favIcon}`}
       ]}
     />
     <SideBar id="sidebar">

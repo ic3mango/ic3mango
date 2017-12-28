@@ -5,7 +5,9 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components';
 
 import './index.css'
+import favIcon from '../images/icons/federalist.png';
 import Particles from '../components/Particles';
+import { media } from '../utils/styled';
 
 const SideBar = styled.div`
   padding: 2.5em 2.5em 0.5em 2.5em;
@@ -17,6 +19,15 @@ const SideBar = styled.div`
   text-align: right;
   width: 18em;
   z-index: 100;
+  ${media.mobile`
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3.5em;
+    line-height: 3.5em;
+    padding: 0;
+    text-align: center;
+  `}
 `
 
 const Inner = styled.div`
@@ -25,14 +36,32 @@ const Inner = styled.div`
   justify-content: center;
   min-height: 100%;
   width: 100%;
+  #sidebar > & {
+    ${media.mobile`
+    flex-direction: row;
+    align-items: stretch;
+    height: inherit;
+    line-height: inherit;
+    `}
+  }
 `
 
 const Nav = styled.nav`
-  display: block;
+  margin: 0;
+  ${media.mobile`
+    height: inherit;
+    line-height: inherit;
+  `}
 `
 
 const NavUl = styled.ul`
   list-style-type: none;
+  ${media.mobile`
+    display: flex;
+    height: inherit;
+    line-height: inherit;
+    margin: 0;
+  `}
 `;
 
 const NavItem = styled.li`
@@ -53,6 +82,11 @@ const NavItem = styled.li`
     position: relative;
     text-transform: uppercase;
     transition: color 0.2s ease;
+    ${media.mobile`
+      height: inherit;
+      line-height: inherit;
+      padding: 0;
+    `}
     &:hover {
       color: rgba(255, 255, 255, 0.55);
     }
@@ -72,14 +106,28 @@ const NavItem = styled.li`
       background-image: linear-gradient(to right, #5e42a6, #b74e91);
       max-width: ${props => props.isActive ? '100%' : '0'};
       transition: max-width 0.2s ease;
+      ${media.mobile`
+        background-image: none;
+        background-color: #b74e91;
+      `}
     }
   }
+  ${media.mobile`
+    display: block;
+    height: inherit;
+    line-height: inherit;
+    margin: 0 1.5em;
+  `}
 `
 
 const Wrapper = styled.div`
   #sidebar + & {
     margin-left: 18em;
+    ${media.mobile`
+      margin: 0;
+    `}
   }
+
 `
 
 const FullScreen = styled.div`
@@ -98,6 +146,9 @@ const TemplateWrapper = ({ children, location: { pathname }}) => (
       meta={[
         { name: 'description', content: 'Stefan\'s portfolio site built using React' },
         { name: 'keywords', content: 'portfolio, web-dev, react, gatsby' },
+      ]}
+      link={[
+        { rel: "shotcut icon", type:"image/png", href: `${favIcon}`}
       ]}
     />
     <SideBar id="sidebar">

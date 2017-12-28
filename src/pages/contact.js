@@ -5,9 +5,14 @@ import { SocialIcon } from 'react-social-icons';
 import ButtonDefault from '../components/ButtonDefault';
 import PageViewTransparent from '../components/PageViewTransparent';
 
+import { media } from '../utils/styled';
+
 
 const PageView = PageViewTransparent.extend`
   background-color: rgba(120, 206, 220, 0.2);
+  ${media.mobile`
+    padding-top: 3.5em;
+  `}
 `
 
 const Inner = styled.div`
@@ -21,6 +26,12 @@ const Split = styled.div`
   & > :nth-child(2n-1) {
     border-right: solid 1px rgba(255, 255, 255, 0.15);
   }
+  ${media.mobile`
+    display: block;
+    & > :nth-child(2n-1) {
+      border-right: 0;
+    }
+  `}
 `
 
 const ContactForm = styled.form`
@@ -66,6 +77,7 @@ const ContactFormInputText = styled.input`
 const ContactFormTextArea = ContactFormInputText.withComponent('textarea').extend`
   height: 16em;
   padding: 0.75em 1em;
+  resize: none;
 `
 
 const ButtonSubmit = ButtonDefault.withComponent('input').extend`

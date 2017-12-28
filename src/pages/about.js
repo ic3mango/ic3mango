@@ -18,7 +18,8 @@ const IndexPage = ({ transition }) => (
       <Inner >
         <p>
           Hi. I'm Stefan. A cosmopolitan, explorer, humanitarian, environmentalist, reader, cyclist,
-          cynic, iconoclast, crypto investor, and web-developer.
+          cynic, iconoclast, crypto investor, and web-developer. During my free time, I love to read a good book,
+          or would sometimes wander in nature and marvel at the ordinary miracles all around us.
         </p>
       </Inner>
     </PageView>

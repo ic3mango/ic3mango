@@ -15,3 +15,16 @@ checkout [particles.js](http://vincentgarreau.com/particles.js/)
 ## Deployed using netlify
 ![](https://www.netlify.com/img/deploy/button.svg)
 <!--  -->
+
+## Deploying on surgesh
+```bash
+gatsby develop
+```
+
+## Deployment options
+
+|Service|Fast|Easy|CoolName|
+|------:|:-:|:-:|:-:|
+|Heroku|No|No|No|
+|Netlify|Yes|Yes|No|
+|SurgeSh|Yes|Yes|Yes

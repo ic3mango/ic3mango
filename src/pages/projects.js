@@ -63,16 +63,15 @@ const ProjectsPage = ({ transition }) => {
     <PageView>
       {/* Project 1 */}
       <ProjectHighlight>
-        <ProjectImage style={{ backgroundImage: `url(${fatevoke})`}}/>
+        <ProjectImage style={{ backgroundImage: `url(${pinflight})`}}/>
         <ProjectDescription>
           <ProjectDescriptionInner>
-            <h2>FateVoke</h2>
-            <p>Create polls and share them with your friends or anyone in the world. Anyone can vote and you'll be able to
-              see the results of the poll visualized in a PieChart.
+            <h2>PinFlight</h2>
+            <p>Pinterest clone which allows aeronautics hobbyists to share pins of their favorite aeronautics photo. Users are able to save and hide pins and organize them according to categories.
             </p>
             <ProjectDescriptionActions>
-              <ButtonDefaultExternal href="https://fatevoke.herokuapp.com/" target="_blank">Website</ButtonDefaultExternal>
-              <ButtonAlternateExternal href="https://github.com/ic3mango/FateVoke" target="_blank">Github</ButtonAlternateExternal>
+              <ButtonDefaultExternal href="https://pinflight.herokuapp.com/" target="_blank">Website</ButtonDefaultExternal>
+              <ButtonAlternateExternal href="https://github.com/ic3mango/pinflight" target="_blank">Github</ButtonAlternateExternal>
             </ProjectDescriptionActions>
           </ProjectDescriptionInner>
         </ProjectDescription>
@@ -95,15 +94,16 @@ const ProjectsPage = ({ transition }) => {
       </ProjectHighlightSecond>
       {/* Project 3 */}
       <ProjectHighlightThird>
-        <ProjectImage style={{ backgroundImage: `url(${pinflight})`}}/>
+        <ProjectImage style={{ backgroundImage: `url(${fatevoke})`}}/>
         <ProjectDescription>
           <ProjectDescriptionInner>
-            <h2>PinFlight</h2>
-            <p>Pinterest clone which allows aeronautics hobbyists to share pins of their favorite aeronautics photo. Users are able to save and hide pins and organize them according to categories.
+            <h2>FateVoke</h2>
+            <p>Create polls and share them with your friends or anyone in the world. Anyone can vote and you'll be able to
+              see the results of the poll visualized in a PieChart.
             </p>
             <ProjectDescriptionActions>
-              <ButtonDefaultExternal href="https://pinflight.herokuapp.com/" target="_blank">Website</ButtonDefaultExternal>
-              <ButtonAlternateExternal href="https://github.com/ic3mango/pinflight" target="_blank">Github</ButtonAlternateExternal>
+              <ButtonDefaultExternal href="https://fatevoke.herokuapp.com/" target="_blank">Website</ButtonDefaultExternal>
+              <ButtonAlternateExternal href="https://github.com/ic3mango/FateVoke" target="_blank">Github</ButtonAlternateExternal>
             </ProjectDescriptionActions>
           </ProjectDescriptionInner>
         </ProjectDescription>

@@ -1,6 +1,6 @@
 # Ic3mango's portfolio
 
-Vist the [website](https://nervous-bartik-c43014.netlify.com/)
+Vist the [website](https://ic3mango.netlify.com/)
 
 ## Built using
 

@@ -7,7 +7,8 @@ import styled from 'styled-components';
 import './index.css'
 import favIcon from '../images/icons/federalist.png';
 import Particles from '../components/Particles';
-import { media } from '../utils/styled';
+import { PageViewTransparent as FullScreen } from '../components/Views';
+import media from '../utils/media';
 
 const SideBar = styled.div`
   padding: 2.5em 2.5em 0.5em 2.5em;
@@ -19,7 +20,7 @@ const SideBar = styled.div`
   text-align: right;
   width: 18em;
   z-index: 100;
-  ${media.mobile`
+  ${media.small`
     top: 0;
     left: 0;
     width: 100%;
@@ -37,7 +38,7 @@ const Inner = styled.div`
   min-height: 100%;
   width: 100%;
   #sidebar > & {
-    ${media.mobile`
+    ${media.small`
     flex-direction: row;
     align-items: stretch;
     height: inherit;
@@ -48,7 +49,7 @@ const Inner = styled.div`
 
 const Nav = styled.nav`
   margin: 0;
-  ${media.mobile`
+  ${media.small`
     height: inherit;
     line-height: inherit;
   `}
@@ -56,7 +57,7 @@ const Nav = styled.nav`
 
 const NavUl = styled.ul`
   list-style-type: none;
-  ${media.mobile`
+  ${media.small`
     display: flex;
     height: inherit;
     line-height: inherit;
@@ -82,7 +83,7 @@ const NavItem = styled.li`
     position: relative;
     text-transform: uppercase;
     transition: color 0.2s ease;
-    ${media.mobile`
+    ${media.small`
       height: inherit;
       line-height: inherit;
       padding: 0;
@@ -106,13 +107,13 @@ const NavItem = styled.li`
       background-image: linear-gradient(to right, #5e42a6, #b74e91);
       max-width: ${props => props.isActive ? '100%' : '0'};
       transition: max-width 0.2s ease;
-      ${media.mobile`
+      ${media.small`
         background-image: none;
         background-color: #b74e91;
       `}
     }
   }
-  ${media.mobile`
+  ${media.small`
     display: block;
     height: inherit;
     line-height: inherit;
@@ -123,19 +124,11 @@ const NavItem = styled.li`
 const Wrapper = styled.div`
   #sidebar + & {
     margin-left: 18em;
-    ${media.mobile`
+    ${media.small`
       margin: 0;
     `}
   }
-
-`
-
-const FullScreen = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100vh;
-`
+`;
 
 const pageList = ['about', 'skills', 'projects', 'contact']
 

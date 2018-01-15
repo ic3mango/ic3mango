@@ -2,23 +2,17 @@ import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components';
 import { SocialIcon } from 'react-social-icons';
-import ButtonDefault from '../components/ButtonDefault';
-import PageViewTransparent from '../components/PageViewTransparent';
+import { ButtonDefault } from '../components/Buttons';
+import { PageViewTransparent, Inner } from '../components/Views';
 
-import { media } from '../utils/styled';
+import media from '../utils/media';
 
 
 const PageView = PageViewTransparent.extend`
   background-color: rgba(120, 206, 220, 0.2);
-  ${media.small`
+  ${media.xs`
     padding-top: 3.5em;
   `}
-`
-
-const Inner = styled.div`
-  padding: 4em 4em 2em 4em;
-  width: 75em;
-  max-width: 100%
 `
 
 const Split = styled.div`
@@ -26,7 +20,7 @@ const Split = styled.div`
   & > :nth-child(2n-1) {
     border-right: solid 1px rgba(255, 255, 255, 0.15);
   }
-  ${media.small`
+  ${media.xs`
     display: block;
     & > :nth-child(2n-1) {
       border-right: 0;
@@ -37,7 +31,6 @@ const Split = styled.div`
 const ContactForm = styled.form`
   flex-basis: 66%;
   padding-right: 2em;
-
 `
 
 const ContactFormInputGroup = styled.div`
@@ -46,8 +39,15 @@ const ContactFormInputGroup = styled.div`
 
 const ContactFormInline = ContactFormInputGroup.extend`
   display: flex;
+  ${media.xs`
+    display: block;
+  `}
+
   & * {
     margin-right: 1em;
+    ${media.xs`
+      margin-right: 0;
+    `}
   }
   & :last-child {
     margin-right: 0;
@@ -55,7 +55,8 @@ const ContactFormInline = ContactFormInputGroup.extend`
 `
 
 const ContactFormGroupInlineHalf = styled.div`
-  flex-basis: 50%
+  flex-basis: 50%;
+
 `
 
 const ContactFormInputText = styled.input`
@@ -80,8 +81,7 @@ const ContactFormTextArea = ContactFormInputText.withComponent('textarea').exten
   resize: none;
 `
 
-const ButtonSubmit = ButtonDefault.withComponent('input').extend`
-`;
+const ButtonSubmit = ButtonDefault.withComponent('input').extend``;
 
 const ContactInfo = styled.div`
   flex-basis: 33%;

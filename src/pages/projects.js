@@ -1,18 +1,17 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
-import ButtonDefault from '../components/ButtonDefault';
-import ButtonAlternate from '../components/ButtonAlternate';
-import PageViewTransparent from '../components/PageViewTransparent';
+import { ButtonDefault, ButtonAlternate } from '../components/Buttons';
+import {PageViewTransparent} from '../components/Views';
 
-import { media } from '../utils/styled';
+import media from '../utils/media';
 import fatevoke from '../images/projects/fatevoke.png';
 import barcation from '../images/projects/barcation.png';
 import pinflight from '../images/projects/pinflight.png';
 
 const PageView = PageViewTransparent.extend`
   background-color: rgba(183, 78, 145, 0.2);
-  ${media.mobile`
+  ${media.small`
     padding-top: 3.5em;
   `}
 `
@@ -21,7 +20,7 @@ const ProjectHighlight = styled.div`
   display: flex;
   flex-direction: row;
   min-height: 22.5em;
-  ${media.small`
+  ${media.xs`
     flex-direction: column;
   `}
 `
@@ -43,14 +42,16 @@ const ProjectImage = styled.a`
   position: relative;
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   border-radius: 0;
   text-decoration: none;
-  min-width: 28em;
+  margin-left: 4em;
+  flex: 1 0 25em;
   cursor: pointer;
-  ${media.small`
+  ${media.xs`
     display: block;
-    min-height: 28em;
+    margin: 0;
+    min-height: 25em;
   `}
 `
 
@@ -60,7 +61,9 @@ const ProjectDescription = styled.div`
   flex-direction: column;
   justify-content: center;
   flex: 1 1 auto;
-
+  ${media.xs`
+    padding: 0 2em 2em 2em;
+  `}
 `
 const ProjectDescriptionInner = styled.div`
 `
@@ -75,7 +78,11 @@ const ProjectsPage = ({ transition }) => {
     <PageView>
       {/* Project 1 */}
       <ProjectHighlight>
-        <ProjectImage style={{ backgroundImage: `url(${pinflight})`}}/>
+        <ProjectImage
+          href="https://pinflight.herokuapp.com/"
+          target="_blank"
+          style={{ backgroundImage: `url(${pinflight})`}}
+        />
         <ProjectDescription>
           <ProjectDescriptionInner>
             <h2>PinFlight</h2>

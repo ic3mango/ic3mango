@@ -1,10 +1,11 @@
 import React from 'react'
+import { Inner } from '../components/Views';
 
 const NotFoundPage = () => (
-  <div>
+  <Inner>
     <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </div>
+    <p>Sorry, I've lacked the time to make this page harder to hit upon</p>
+  </Inner>
 )
 
 export default NotFoundPage

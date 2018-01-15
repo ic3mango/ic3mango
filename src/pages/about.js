@@ -1,25 +1,21 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components';
-import ButtonDefault from '../components/ButtonDefault';
-import PageViewTransparent from '../components/PageViewTransparent';
+import { ButtonDefault } from '../components/Buttons';
+import { PageViewTransparent, Inner  } from '../components/Views';
 
 const PageView = PageViewTransparent.extend`
   background-color: rgba(0, 196, 220, 0.2);
 `
 
-const Inner = styled.div`
-  padding: 4em 4em 2em 4em;
-`
-
 const IndexPage = ({ transition }) => (
   <div style={transition && transition.style}>
     <PageView>
-      <Inner >
+      <Inner>
         <p>
-          Hi. I'm Stefan. A cosmopolitan, explorer, humanitarian, environmentalist, reader, cyclist,
-          cynic, iconoclast, crypto investor, and web-developer. During my free time, I love to read a good book,
-          or would sometimes wander in nature and marvel at the ordinary miracles all around us.
+          Hi, I'm Stefan. I like creating products that solves real problems and improves the lives of the users.
+          Frontend development is my main focus and the MERN stack is my preferred tech stack.
+          Feel free to contact me for any job opportunities.
         </p>
       </Inner>
     </PageView>

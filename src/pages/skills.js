@@ -1,10 +1,9 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components';
-import ButtonDefault from '../components/ButtonDefault';
-import PageViewTransparent from '../components/PageViewTransparent';
+import { ButtonDefault } from '../components/Buttons';
+import { PageViewTransparent, Grid } from '../components/Views';
 
-import { media } from '../utils/styled';
 import javascriptSvg from '../images/icons/javascript.svg';
 import reactSvg from '../images/icons/react.svg';
 import reduxSvg from '../images/icons/redux.svg';
@@ -15,15 +14,6 @@ import gitSvg from '../images/icons/git.svg';
 
 const PageView = PageViewTransparent.extend`
   background-color: rgba(239, 218, 91, 0.25);
-`
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 30px;
-  color: #888;
-  ${media.small`
-    grid-template-columns: 1fr 1fr;
-  `}
 `
 
 const Img = styled.img`

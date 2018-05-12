@@ -118,7 +118,7 @@ const SocialIconsList = styled.ul`
       opacity: 0.3;
       background-color: #fff;
       border-radius: 50%;
-      transition: opacity 0.2s ease, transform 0.2s ease;
+      transition: all 0.2s ease;
       z-index: -2;
     }
 
@@ -170,7 +170,7 @@ const ContactPage = ({ transition }) => (
               </li>
               <li>
                 <h3>Phone</h3>
-                <p>+31 64 385 4389</p>
+                <p>+1 250 509 1367</p>
               </li>
               <li>
                 <h3>Social</h3>
